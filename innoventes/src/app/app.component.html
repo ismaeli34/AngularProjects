@@ -1,0 +1,141 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div class="container-fluid" style="margin-top: 100px">
+
+
+
+  <mat-accordion class="example-headers-align">
+    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+         <b>Convert Integer to Roman Number</b>
+        </mat-panel-title>
+        <mat-panel-description>
+          Please enter Integer number and click on convert to see results.
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <!--Converting Integer to Roman Number-->
+
+      <div row style="text-align:center">
+        <mat-card>
+          <h4>Converting Integer to Roman Number</h4>
+
+          <div class="row">
+            <div class="col-md-4">
+
+              <form class="example-form">
+                <mat-form-field class="example-full-width">
+                  <input name="input number" [(ngModel)]="integer.input_number" matInput placeholder="Enter Integer ">
+                </mat-form-field>
+              </form>
+
+              <h4>Integer Number: {{integer.input_number}}</h4>
+
+
+            </div>
+            <div class="col-md-4">
+
+              <button (click)="convertIntegerToRomanNumber()" mat-raised-button color="primary">Convert</button>
+
+
+            </div>
+
+            <div class="col-md-4">
+
+              <form class="example-form">
+                <mat-form-field class="example-full-width">
+                  <input name="input number" [(ngModel)]="romanArray" matInput placeholder="Integer ">
+                </mat-form-field>
+              </form>
+
+              <h4>Roman Number: {{romanArray}}</h4>
+
+
+            </div>
+          </div>
+
+
+        </mat-card>
+
+      </div>
+
+
+
+
+      <mat-action-row>
+        <button mat-button color="primary" (click)="nextStep()">Next</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+        <b>Convert Roman Number to Integer</b>
+        </mat-panel-title>
+        <mat-panel-description>
+         Please enter a Roman Number and click on Convert to see the result.
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <!--ROMAN NUMBER TO INTEGER -->
+
+      <div row style="text-align:center">
+        <mat-card>
+          <h4>Converting Roman to Integer </h4>
+
+          <div class="row">
+            <div class="col-md-4">
+
+              <form class="example-form">
+                <mat-form-field class="example-full-width">
+                  <input name="input number" [(ngModel)]="integer.roman_number" matInput placeholder="Enter Roman Number">
+                </mat-form-field>
+              </form>
+
+              <h4>Roman Number: {{integer.roman_number}}</h4>
+
+
+            </div>
+            <div class="col-md-4">
+
+              <button (click)="converRomanToInteger()" mat-raised-button color="accent">Convert</button>
+
+
+            </div>
+
+            <div class="col-md-4">
+
+              <form class="example-form">
+                <mat-form-field class="example-full-width">
+                  <input name="input number" [(ngModel)]="result" matInput placeholder="Integer">
+                </mat-form-field>
+              </form>
+
+              <h4>Integer Number: {{result}}</h4>
+
+
+            </div>
+          </div>
+
+
+        </mat-card>
+
+      </div>
+
+
+      <mat-action-row>
+        <button mat-button color="warn" (click)="prevStep()">Previous</button>
+        <button mat-button color="primary" (click)="nextStep()">Next</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+
+
+
+
+
+
+
+</div>
